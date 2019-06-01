@@ -1,5 +1,5 @@
-class OauthService
-  def self.generate_url
+class TweetsService
+  def self.generate_oauth_url
     endpoint = "#{base_url}/oauth/authorize"
     client_id = ENV["FAKE_TWITTER_CLIENT_ID"]
 
@@ -27,6 +27,22 @@ class OauthService
 
     results = JSON.parse(response.body.to_s)
     results["access_token"]
+  end
+
+  def self.submit_image(access_token:, image_title:, image_url:)
+    response = HTTP.post(
+      "#{base_url}/api/tweets",
+      headers: {
+        "Authorization": "Bearer #{access_token}",
+        "Content-Type": "application/json",
+      },
+      body: JSON.generate({
+        text: image_title,
+        url: image_url,
+      }),
+    )
+
+    return response.code == 201
   end
 
   def self.base_url

@@ -5,14 +5,17 @@ class TweetsController < ApplicationController
     picture = Picture.find(params[:picture_id])
     access_token = session["oauth_access_token"]
 
-    response = HTTP.post(
-      "https://arcane-ravine-29792.herokuapp.com/api/tweets",
-      headers: { "Authorization": "Bearer #{access_token}", "Content-Type": "application/json" },
-      body: JSON.generate({
-        text: picture.title,
-        url: url_for(picture.image),
-      }),
-    )
+    upload_success = TweetsService.submit_image({
+      access_token: access_token,
+      image_title: picture.title,
+      image_url: url_for(picture.image),
+    })
+
+    if upload_success
+      flash[:success] = "Image submitted to Fake Twitter successfully"
+    else
+      flash[:error] = "An error occured submitting the image to Fake Twitter"
+    end
 
     redirect_to "/"
   end

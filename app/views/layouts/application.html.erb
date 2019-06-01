@@ -11,7 +11,8 @@
 
   <body>
     <%= render "shared/topnav" %>
-    <% if flash[:error] %>
+    <% if flash.present? %>
+      <div class="success"><%= flash[:success] %></div>
       <div class="errors"><%= flash[:error] %></div>
     <% end %>
     <%= yield %>
