@@ -1,24 +1,28 @@
-# README
+# Setting Up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run the following commands to set up the app:
 
-Things you may want to cover:
+```bash
+bundle install
+bundle exec rails db:create
+bundle exec rails db:migrate
+```
 
-* Ruby version
+After this you can start the server using
 
-* System dependencies
+```bash
+bundle exec rails server
+```
 
-* Configuration
+### Fake Twitter Integration
 
-* Database creation
+Please include the `client_id` and `client_secret` provided in a `.env` file placed in the root directory of the app.
 
-* Database initialization
+The contents of the file should look like below:
 
-* How to run the test suite
+```
+FAKE_TWITTER_CLIENT_ID=xxx
+FAKE_TWITTER_CLIENT_SECRET=xx
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
