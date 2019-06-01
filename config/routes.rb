@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "/oauth/new", to: "oauth#new"
   get "/oauth/callback", to: "oauth#callback"
 
+  post "/tweets", to: "tweets#create"
+
   root "pictures#index"
 end
