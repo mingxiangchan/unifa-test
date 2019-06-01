@@ -14,6 +14,8 @@
 #
 
 class User < ApplicationRecord
-  validates :identifier, presence: true
+  has_many :pictures
+
+  validates :identifier, presence: true, uniqueness: true
   has_secure_password
 end

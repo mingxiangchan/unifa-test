@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 
-#login-container {
+#form-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,9 +20,4 @@
 .form-group * {
   margin-bottom: 5px;
   padding: 5px;
-}
-
-.errors {
-  background-color: #ff6d80;
-  color: white;
 }
