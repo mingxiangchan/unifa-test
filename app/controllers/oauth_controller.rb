@@ -7,5 +7,8 @@ class OauthController < ApplicationController
 
   def callback
     code = params[:code]
+    access_token = OauthService.obtain_access_token(code)
+    session[:oauth_access_token] = access_token
+    redirect_to "/"
   end
 end
