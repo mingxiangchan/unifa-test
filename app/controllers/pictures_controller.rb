@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :require_login
+
   def new
     @picture = Picture.new
     @errors = []
