@@ -1,5 +1,5 @@
 #form-container
-  h2 Login Page
+  h2 Upload Picture
 
   - if !@errors.empty?
     div.errors
@@ -8,13 +8,13 @@
           li
             = error
 
-  = form_for :user do |f|
+  = form_for :picture do |f|
     div.form-group
-      label User ID
-      = f.text_field :identifier
+      label Title
+      = f.text_field :title
     div.form-group
-      label Password
-      = f.password_field :password
+      label Pick your Image
+      = f.file_field :image
     hr
     div
       = f.submit "Submit"
