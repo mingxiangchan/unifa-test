@@ -24,6 +24,8 @@ class Picture < ApplicationRecord
   validates :title, presence: true, length: { maximum: 30 }
   validate :image_presence
 
+  scope :most_recent, -> { order(created_at: :desc) }
+
   private
 
   def image_presence

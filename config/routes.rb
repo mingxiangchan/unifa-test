@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   post "/sessions/new", to: "sessions#create"
   get "/pictures/new", to: "pictures#new"
   post "/pictures/new", to: "pictures#create"
+  root "pictures#index"
 end

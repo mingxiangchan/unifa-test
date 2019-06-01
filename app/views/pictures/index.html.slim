@@ -1,0 +1,15 @@
+#list-container
+  #list-links
+    = link_to "Upload Picture", "/pictures/new"
+
+  #list
+    - @pictures.each do |picture|
+      .list-item
+        .list-image style="background-image: url(#{url_for(picture.image)})"
+        .list-description
+          = picture.title
+          br
+          span.timestamp
+            | Posted At:
+            = picture.created_at.strftime("%H:%M, %d %b")
+          
