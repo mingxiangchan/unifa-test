@@ -1,5 +1,5 @@
-class OauthService
-  def self.generate_url
+class TweetsService
+  def self.generate_oauth_url
     endpoint = "#{base_url}/oauth/authorize"
     client_id = ENV["FAKE_TWITTER_CLIENT_ID"]
 
