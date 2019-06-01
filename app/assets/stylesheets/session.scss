@@ -1,0 +1,28 @@
+// Place all the styles related to the session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+
+#login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  min-width: 300px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group * {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.errors {
+  background-color: #ff6d80;
+  color: white;
+}

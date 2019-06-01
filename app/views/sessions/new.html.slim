@@ -1,0 +1,19 @@
+#login-container
+  h2 Login Page
+
+  - if !@errors.empty?
+    div.errors
+      ul
+        - @errors.each do |error|
+          li
+            = error
+
+  = form_for :user do |f|
+    div.form-group
+      label User ID
+      = f.text_field :identifier
+    div.form-group
+      label Password
+      = f.text_field :password
+    div
+      = f.submit "Submit"
