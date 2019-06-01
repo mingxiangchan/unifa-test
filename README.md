@@ -1,4 +1,5 @@
 # Setting Up
+This app is built against ruby 2.6.3, please ensure you have the correct version of ruby.
 
 Run the following commands to set up the app:
 
