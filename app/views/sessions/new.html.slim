@@ -1,7 +1,7 @@
 #login-container
   h2 Login Page
 
-  = form_for :user do |f|
+  = form_for :user, {url: "/sessions"} do |f|
     div.form-group
       label User ID
       = f.text_field :identifier
