@@ -29,3 +29,7 @@ body {
   background-color: #ff6d80;
   color: white;
 }
+
+.success {
+  background-color: #99dd7e;
+}
