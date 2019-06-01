@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0px;
+}
+
+#topnav {
+  padding: 10px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,6 @@
+#topnav
+  #links
+    - if @current_user.present?
+      = link_to "Logout", "/sessions", method: :delete
+    - else
+      = link_to "Login", "/sessions/new"
