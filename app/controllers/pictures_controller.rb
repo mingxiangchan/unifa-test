@@ -1,6 +1,10 @@
 class PicturesController < ApplicationController
   before_action :require_login
 
+  def index
+    @pictures = @current_user.pictures.most_recent
+  end
+
   def new
     @picture = Picture.new
     @errors = []
