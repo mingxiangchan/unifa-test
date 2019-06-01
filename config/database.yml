@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: unifa-test_development
+
+test:
+  <<: *default
+  database: unifa-test_test
+
+production:
+  <<: *default
+  database: unifa-test_production
+  username: unifa-test
+  password: <%= ENV['UNIFA-TEST_DATABASE_PASSWORD'] %>
