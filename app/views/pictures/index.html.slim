@@ -1,6 +1,9 @@
 #list-container
   #list-links
-    = link_to "Upload Picture", "/pictures/new"
+    p
+      = link_to "Upload Picture", "/pictures/new"
+    p
+      = link_to "Link to Twitter", "/oauth/new"
 
   #list
     - @pictures.each do |picture|
@@ -12,4 +15,3 @@
           span.timestamp
             | Posted At:
             = picture.created_at.strftime("%H:%M, %d %b")
-          
