@@ -16,7 +16,7 @@ module UnifaTest
   class Application < Rails::Application
     config.load_defaults 5.2
 
-    config.generators.assets = false
+    config.generators.javascripts = false
     config.generators.helper = false
   end
 end
